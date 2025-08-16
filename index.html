@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>One Piece Fan Portal</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="Photos/skull.png"/>
+  <meta name="description" content="Sail the Grand Line with Luffy and the Straw Hat Crew! Bounty Board, Devil Fruits, Gallery, and more."/>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="glass">
+    <div class="brand">
+      <img src="Photos/Skull1.png" alt="One Piece Logo" class="logo"/>
+      <span class="site-name">Straw Hat Hub</span>
+    </div>
+
+    <nav id="navbar">
+      <ul>
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#crew">Crew</a></li>
+        <li><a href="#bounty">Bounty Board</a></li>
+        <li><a href="#fruits">Devil Fruits</a></li>
+        <li><a href="#facts">Fun Facts</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌓</button>
+        <button id="musicToggle" aria-label="Toggle music" title="Toggle music">🎵</button>
+        <button id="menu-toggle" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero parallax" data-parallax="Photos/skull.png">
+    <div class="hero-content">
+      <h1 class="typing">Welcome to the Grand Line!</h1>
+      <p class="subtitle">Sail with Luffy and the Straw Hat Crew to find the legendary <span class="highlight">One Piece</span>.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="showAlert()">Join the Crew</button>
+        <a href="#crew" class="btn btn-outline">Meet the Crew</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge">⚓ Pirate Era</span>
+        <span class="badge">🏴‍☠️ Straw Hats</span>
+        <span class="badge">🌊 Grand Line</span>
+      </div>
+    </div>
+    <div class="floating-particles" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== CREW ===== -->
+  <section id="crew" class="content-section reveal">
+    <div class="section-head">
+      <h2>The Straw Hat Pirates</h2>
+      <p>Search, flip, and explore each member’s role and bounty.</p>
+    </div>
+
+    <div class="toolbar">
+      <input type="text" id="crewSearch" placeholder="Search by name or role…"/>
+      <select id="crewSort" aria-label="Sort crew">
+        <option value="default">Sort: Default</option>
+        <option value="name">Sort: Name (A–Z)</option>
+        <option value="bounty">Sort: Bounty (High→Low)</option>
+      </select>
+    </div>
+
+    <div id="crewGrid" class="crew-grid">
+      <!-- Cards inserted by JS -->
+    </div>
+  </section>
+
+  <!-- ===== BOUNTY BOARD ===== -->
+  <section id="bounty" class="content-section reveal">
+    <div class="section-head">
+      <h2>🔥 Bounty Board</h2>
+      <p>Wanted posters for notorious members of the Straw Hat Crew.</p>
+    </div>
+    <div id="bountyGrid" class="bounty-grid">
+      <!-- Wanted posters inserted by JS -->
+    </div>
+  </section>
+
+  <!-- ===== DEVIL FRUITS ===== -->
+  <section id="fruits" class="content-section reveal">
+    <div class="section-head">
+      <h2>🍎 Devil Fruit Randomizer</h2>
+      <p>Spin the wheel of fate to discover your powers!</p>
+    </div>
+
+    <div class="fruit-wrap glass">
+      <div class="fruit-display">
+        <div id="fruitEmoji" class="fruit-emoji">❓</div>
+        <div>
+          <h3 id="fruitName">Tap “Spin Fruit”</h3>
+          <p id="fruitType" class="muted">—</p>
+        </div>
+      </div>
+      <div class="fruit-actions">
+        <button id="spinFruit" class="btn btn-primary">Spin Fruit</button>
+        <button id="resetFruit" class="btn btn-outline">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FUN FACTS ===== -->
+  <section id="facts" class="content-section reveal">
+    <div class="section-head">
+      <h2>💡 Fun Facts</h2>
+      <p>Swipe/Click through bite-sized trivia about the One Piece world.</p>
+    </div>
+
+    <div class="carousel glass">
+      <button class="carousel-btn" id="factsPrev" aria-label="Previous">‹</button>
+      <div class="carousel-track" id="factsTrack">
+        <!-- Slides inserted by JS -->
+      </div>
+      <button class="carousel-btn" id="factsNext" aria-label="Next">›</button>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section id="timeline" class="content-section reveal">
+    <div class="section-head">
+      <h2>🗺️ Voyage Timeline</h2>
+      <p>Key arcs on the path to the Pirate King.</p>
+    </div>
+    <div class="timeline">
+      <!-- Timeline items inserted by JS -->
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section id="gallery" class="content-section reveal">
+    <div class="section-head">
+      <h2>📷 Gallery</h2>
+      <p>Moments from the Grand Line. Click any image to open the lightbox.</p>
+    </div>
+
+    <div class="gallery-controls">
+      <button id="galleryPrev" class="btn btn-outline">‹ Prev</button>
+      <button id="galleryNext" class="btn btn-outline">Next ›</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Images inserted by JS -->
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="content-section reveal">
+    <div class="section-head">
+      <h2>Contact Us</h2>
+      <p>Send a message in a bottle. We’ll get back faster than a Yoruou!</p>
+    </div>
+
+    <form id="contactForm" class="glass">
+      <input type="text" id="name" placeholder="Your Name" required/>
+      <input type="email" id="email" placeholder="Your Email" required/>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <div class="form-row">
+        <label class="checkbox">
+          <input type="checkbox" id="newsletter"/>
+          <span>Subscribe to updates</span>
+        </label>
+        <span id="formMsg" role="status" aria-live="polite"></span>
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© <span id="year"></span> Straw Hat Hub | Made with ❤️ for the Straw Hat Pirates</p>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button id="scrollTopBtn" aria-label="Scroll to top">⬆</button>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <button id="closeLightbox" class="close-lightbox" aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="Gallery image"/>
+  </div>
+
+  <!-- AUDIO (optional) -->
+  <audio id="bgm" loop preload="auto">
+    <!-- Place an mp3 at Photos/bink_sake.mp3 or change src -->
+    <source src="one-piece_opening-1-we-are.mp3" type="audio/mpeg"/>
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
