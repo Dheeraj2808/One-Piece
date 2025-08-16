@@ -312,12 +312,12 @@ function buildTimeline(){
 const GALLERY = [
    { src: "Photos/onepiece.png", alt: "Logo" },
   { src: "Photos/luffy5.jpg", full: "Photos/luffy.jpg", alt: "Luffy" },
-  { src: "Photos/zoro8.jpg", alt: "" },
+  { src: "Photos/Zoro8.jpg", alt: "hello" },
  
   { src: "Photos/Zoro2.jpg", alt: "Zoro Sword Pose" },
-  { src: "Photos/zoro1.jpg", alt: "Zoro Action Scene" },
+  { src: "Photos/Zoro1.jpg", alt: "Zoro Action Scene" },
   { src: "Photos/z-d.jpg", alt: "Zoro Dramatic" },
-  { src: "Photos/skull1.png", alt: "Zoro Action Scene" },
+  { src: "Photos/Skull1.png", alt: "Zoro Action Scene" },
   { src: "Photos/crew.jpeg", alt: "Zoro Dramatic" }
   ,
   { src: "Photos/crew1.jpeg", alt: "Logo" },
@@ -436,3 +436,4 @@ function showAlert(){
   alert("Welcome aboard the Going Merry! You're now part of the Straw Hat crew!");
 }
 window.showAlert = showAlert; // expose for inline onclick
+
